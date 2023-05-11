@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_restx import Api
 # from .config.config import config_dict
-from .utils import db
+from api.utils import db
 
 
 

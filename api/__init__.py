@@ -2,6 +2,7 @@ from flask import Flask
 from flask_restx import Api
 from .config.config import config_dict
 # from .utils import db
+from .auth.views import auth_namespace
 
 from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager
@@ -18,11 +19,13 @@ def create_app(config=config_dict['dev']):
 
 
     api = Api(app,
-        title="Pizza Delivery API", 
+        title="Locale API", 
         description="Find whatever you're looking for using Locale API",
         # authorization = authorizations,
         # security = "Bearer Auth"
     )
+
+    api.add_namespace(auth_namespace, path='/auth')
 
 
 

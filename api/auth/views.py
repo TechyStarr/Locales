@@ -1,6 +1,6 @@
 from ..models.users import User
 
-from flask_restx import Resource, Namespace
+from flask_restx import Namespace, Resource, fields
 from flask import request
 from http import HTTPStatus
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -13,7 +13,7 @@ auth_namespace = Namespace('auth', description='Authentication related operation
 
 
 
-auth_namespace = Namespace('auth', description = 'name space for authentication')
+auth_namespace = Namespace('auth', description = 'Authentication')
 
 signup_model = auth_namespace.model(
 	'SignUp',{
@@ -105,18 +105,4 @@ class Refresh(Resource):
 		access_token = create_access_token(identity=username)
 
 		return {'access_token': access_token}, HTTPStatus.OK
-
-
-@auth_namespace.route('/logout')
-class Logout(Resource):
-	@jwt_required
-	def post(self):
-		"""
-		Log the user out
-		"""
-		unset_jwt_cookies
-		db.session.commit()
-		return {"message": "Successfully Logged Out"}, HTTPStatus.OK
-
-
 

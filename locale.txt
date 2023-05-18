@@ -1,0 +1,48 @@
+Geographical Hierarchy: Locale typically provides a comprehensive
+hierarchy of geographical divisions. In the case of Nigeria, 
+this would include regions, states, and local government areas (LGAs). 
+These divisions help developers organize and categorize data based on specific locations.
+
+Geolocation Services: Some developer tools offer geolocation services
+that allow developers to determine a user's location based
+on their IP address or other location-based data. This information
+can then be used to provide customized content or tailor the user experience to a specific region.
+
+Metadata and Attributes: Locale might provide additional metadata 
+and attributes for each geographical division. This can include data such as population,
+area, official languages, time zone information, and other relevant details 
+that can assist developers in creating location-aware applications.
+
+Integration and APIs: Developer tools like Locale often provide APIs 
+(Application Programming Interfaces) that allow developers to access 
+the geographical data programmatically. This enables developers to 
+integrate the data into their applications or services seamlessly.
+
+Localization Support: In addition to geographical data, some developer
+tools also offer localization support, including language translations,
+date and time formats, currency symbols, and other cultural conventions
+specific to a region. This helps developers create applications that are 
+linguistically and culturally relevant to their target audience.
+
+
+
+
+
+
+Api_key = AIzaSyD3mJqxMXXjoUYgpKW9ZErj2VRmhP-HNmU
+
+
+
+Approach
+    Build search function
+    Integrate search function with google maps api
+    Flask caching
+    Rate limiting
+    
+
+    Build a function to get the location of the user
+    Build a function to get the latitude and longitude of the location
+    Build a function to get the timezone of the location
+    Build a function to get the current time of the location
+    Build a function to get the current weather of the location
+

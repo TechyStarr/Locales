@@ -9,6 +9,8 @@ from ..models.info import Region, State, Lga
 search_namespace = Namespace('search', description = 'Search related operations')
 
 
+
+@search_namespace.route('/search')
 class SearchRegions(Resource):
     def get(self):
         query = search_namespace.payload.get('query')

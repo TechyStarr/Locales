@@ -1,44 +1,34 @@
-from ..models.users import User
-
-from flask_restx import Namespace, Resource, fields
+from ..utils.utils import db
 from flask import request
-from http import HTTPStatus
+from flask_restx import Resource, fields, Namespace, abort
+from ..models.users import User
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, unset_jwt_cookies
-
-auth_namespace = Namespace('auth', description='Authentication related operations')
-
-
+from http import HTTPStatus
+from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, get_jwt
+from flask_jwt_extended.exceptions import NoAuthorizationError
 
 
 
+auth_namespace = Namespace('auth', description='Authentication Endpoints')
 
-auth_namespace = Namespace('auth', description = 'Authentication')
+
+
 
 signup_model = auth_namespace.model(
-	'SignUp',{
-		'id': fields.Integer(),
-		'username': fields.String(required=True, description='A username'),
-		'email': fields.String(required=True, description='An email'),
-		'password_hash': fields.String(required=True, description='A password')
+    'Signup', {
+		'username': fields.String(required=True, description="User's Username"),
+		'email': fields.String(required=True, description='User Email Address'),
+		'password_hash': fields.String(required=True, description='User Password')
 	}
 )
+
+
+
 
 login_model = auth_namespace.model(
-	'Login', {
-		'email': fields.String(required=True, description='An email'),
-		'password': fields.String(required=True, description='A password')
-	}
-)
-
-user_model = auth_namespace.model(
-	'User', {
-		'id': fields.Integer(),
-		'username': fields.String(required=True, description='A username'),
-		'email': fields.String(required=True, description='An email'),
-		'password_hash': fields.String(required=True, description='A password'),
-		'is_staff': fields.String(required=True, description='This shows if user is active or not'),
-		'is_active': fields.String(required=True, description='This shows if user is a staff or not')
+    'Login', {
+		'email': fields.String(required=True, description='User email address'),
+		'password': fields.String(required=True, description='User Password')
 	}
 )
 
@@ -48,48 +38,67 @@ user_model = auth_namespace.model(
 @auth_namespace.route('/signup')
 class SignUp(Resource):
 	@auth_namespace.expect(signup_model)
-	@auth_namespace.marshal_with(user_model)
+	@auth_namespace.marshal_with(signup_model)
 	def post(self):
 		"""
 			Register a user
 		"""
 		data = request.get_json()
 
+		# check if user already exists
+		user = User.query.filter_by(email=data.get('email')).first()
+		if user:
+			abort(409, message=f'User {user.username} already exists')
+
+
 		new_user = User(
 			username = data.get('username'),
 			email = data.get('email'),
-			password_hash = generate_password_hash(data.get('password_hash'))
+			password_hash = generate_password_hash(data.get('password_hash')),
+			is_admin = True
 		)
+		try:
+			new_user.save()
+			return new_user, HTTPStatus.CREATED, {
+				'message': f'User {new_user.username} created successfully'
+			}
+		except Exception as e:
+			db.session.rollback()
+			return {
+				'message': 'Something went wrong'
+			}, HTTPStatus.INTERNAL_SERVER_ERROR
 
-		new_user.save()
-		return new_user, HTTPStatus.CREATED
 
 
 @auth_namespace.route('/login')
-class Login(Resource):
+class UserLogin(Resource):
+
 	@auth_namespace.expect(login_model)
 	def post(self):
 		"""
-			Generate JWT Token
+			Generate JWT Token for user
 		"""
-
 		data = request.get_json()
-		
+
 		email = data.get('email')
 		password = data.get('password')
 
 		user = User.query.filter_by(email=email).first()
-
-		if (user is not None) and check_password_hash(user.password_hash, password):
+		
+		if (user is not None) and email and check_password_hash(user.password_hash, password): 
 			access_token = create_access_token(identity=user.username)
 			refresh_token = create_refresh_token(identity=user.username)
 
 			response = {
+				'message': 'Logged in as {}'.format(user.username),
 				'access_token': access_token,
 				'refresh_token': refresh_token
 			}
+			return response, HTTPStatus.ACCEPTED
 
-			return response, HTTPStatus.CREATED
+		if not user:
+			abort(401, message='Invalid Credentials')
+
 
 
 @auth_namespace.route('/refresh')
@@ -97,12 +106,16 @@ class Refresh(Resource):
 	@jwt_required(refresh=True)
 	def post(self):
 		"""
-			Generate refresh Token
+			Refresh JWT access Token
 		"""
 
-		username = get_jwt_identity()
+		identity = get_jwt_identity()
 
-		access_token = create_access_token(identity=username)
+		access_token = create_access_token(identity=identity)
 
-		return {'access_token': access_token}, HTTPStatus.OK
+		response = {
+			'message': 'Access Token Refreshed',
+			'access_token': access_token
+		}
+		return response, HTTPStatus.OK
 

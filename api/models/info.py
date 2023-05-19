@@ -44,11 +44,11 @@ class State(db.Model):
 
 
 class Lga(db.Model):
-    __tablename__ = 'cities'
+    __tablename__ = 'lga'
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(45), nullable=False, unique=True)
     region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'), nullable=False)
-    areas = db.relationship('Area', backref='city', lazy=True)
+    # areas = db.relationship('Area', backref='city', lazy=True)
 
     def __repr__(self):
         return f"<City {self.name}>"
@@ -71,6 +71,24 @@ class Area(db.Model):
 
     def __repr__(self):
         return f"<Area {self.name}>"
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_by_id(cls, id):
+        return cls.query.get_or_404(id)
+    
+class City(db.Model):
+    __tablename__ = 'cities'
+    id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(45), nullable=False, unique=True)
+    region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'), nullable=False)
+    areas = db.relationship('Area', backref='city', lazy=True)
+
+    def __repr__(self):
+        return f"<City {self.name}>"
 
     def save(self):
         db.session.add(self)

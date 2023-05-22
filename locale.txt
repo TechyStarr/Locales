@@ -47,3 +47,17 @@ Approach
     Build a function to get the current time of the location
     Build a function to get the current weather of the location
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

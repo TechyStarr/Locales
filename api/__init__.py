@@ -5,7 +5,7 @@ from .search.views import search_namespace, places_ns
 from .config.config import config_dict
 from .utils.utils import db
 from .models.users import User
-from .models.info import Region, State, Lga, Area
+from .models.data import Region, State, Lga, Area
 from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager
 

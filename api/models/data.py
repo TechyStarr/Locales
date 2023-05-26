@@ -1,6 +1,6 @@
+import json
 from ..utils.utils import db
-
-
+from flask import Flask
 
 
 
@@ -42,6 +42,15 @@ class State(db.Model):
         return cls.query.get_or_404(id)
     
 
+    # Define an index on the 'name' column
+    __table_args__ = (
+        db.Index('idx_states_name', 'name'),
+    )
+
+
+
+
+
 
 class Lga(db.Model):
     __tablename__ = 'lga'
@@ -80,6 +89,8 @@ class Area(db.Model):
     def get_by_id(cls, id):
         return cls.query.get_or_404(id)
     
+
+    
 class City(db.Model):
     __tablename__ = 'cities'
     id = db.Column(db.Integer(), primary_key=True)
@@ -97,3 +108,17 @@ class City(db.Model):
     @classmethod
     def get_by_id(cls, id):
         return cls.query.get_or_404(id)
+    
+
+
+def load_dataset():
+    with open('dataset.json', 'r') as file:
+        dataset = json.load(file)
+
+        for data in dataset:
+            state = State(name=data['name'], population=data['population'])
+            db.session.add(state)
+
+        db.session.commit()
+
+load_dataset()

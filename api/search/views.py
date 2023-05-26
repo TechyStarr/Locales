@@ -16,7 +16,7 @@ places_ns = Namespace('places', description= "Places API")
 
 def validate_api_key(api_key):
     # Add your code to validate the API key
-    return api_key == 'AIzaSyB1Tkl3ER1n1XJ_e_g8FR0Zx5k4KWNo66I'
+    return api_key == 'AIzaSyA7x6Zp7GSt3Nd9pby-eE88B-c4MZq1x5M'
 
 @search_namespace.route('/regions')
 class AddRegions(Resource):
@@ -30,17 +30,7 @@ class AddRegions(Resource):
 class GeocodeResource(Resource):
     
     def get(self):
-        # Test google maps api  with a sample address
-        
-        # api_key = 'AIzaSyAo5kaSVQUzqwlLCuGwNLiPB_umIGOdtuM'
-        # url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=restaurant&name=harbour&key=AIzaSyAo5kaSVQUzqwlLCuGwNLiPB_umIGOdtuM"
-
-        # response = requests.get(url)
-        # data = response.json()
-        # print(data)
-
-
-        # return {'result': api_key}
+        #
 
         gmaps = googlemaps.Client(key='AIzaSyB1Tkl3ER1n1XJ_e_g8FR0Zx5k4KWNo66I')
         address = '1600 Amphitheatre Parkway, Mountain View, CA'

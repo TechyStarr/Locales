@@ -1,107 +1,116 @@
-# cleaning
-# formatting
-# filtering
-# sorting
-# indexing
+# # cleaning
+# # formatting
+# # filtering
+# # sorting
+# # indexing
 
 
-{
-    "Region": [
-        {
-            "id" : "1",
-            "name": "South East"
-        },
 
-        {
-            "id": "2",
-            "name": "South South"
-        },
 
-        {
-            "id" : "3",
-            "name": "South West"
-        },
 
-        {
-            "id": "4",
-            "name": "North Central"
-        },
+
+
+
+
+
+
+# {
+#     "Region": [
+#         {
+#             "id" : "1",
+#             "name": "South East"
+#         },
+
+#         {
+#             "id": "2",
+#             "name": "South South"
+#         },
+
+#         {
+#             "id" : "3",
+#             "name": "South West"
+#         },
+
+#         {
+#             "id": "4",
+#             "name": "North Central"
+#         },
 
         
-        {
-            "id": "5",
-            "name": "North East"
-        },
+#         {
+#             "id": "5",
+#             "name": "North East"
+#         },
 
-        {
-            "id" : "6",
-            "name": "North West"
-        },
-    ],
+#         {
+#             "id" : "6",
+#             "name": "North West"
+#         },
+#     ],
 
-    "States": [
-        {
-        "id": "1",
-        "name": "Abia",
-        "region": "South East",
-        "region_id": "1",
-        "capital": "Umuahia",
-        "population": "2,833,999",
-        "area": "6,320",
-        "governor": "Okezie Ikpeazu",
-        "deputy_governor": "Ude Oko Chukwu",
-        "date_created": "27th August, 1991",
-        "motto": "God's Own State",
-        "website": "www.abiastate.gov.ng",
-        "map": "https://en.wikipedia.org/wiki/Abia_State#/media/File:Nigeria_Abia_State_map.png",
-        "description": "Abia is a state in the south eastern part of Nigeria. The capital is Umuahia and the major commercial city is Aba, formerly a British colonial government outpost. The state was created in 1991 from part of Imo State and its citizens are predominantly Igbo people (95% of population). It is one of the nine constituent states of the Niger Delta region.",
-        "landmarks": [
-            {
-                "name": "National War Museum",
-                "location": "Umuahia",
-                "description": "The National War Museum, Umuahia, is a museum in Umuahia, Nigeria, founded in 1985 by the Nigerian Federal Government. Major General Patrick Aziza (rtd) was its first curator. The museum has a collection of relics from the pre-colonial Nigeria era to the Biafran war. The museum is located at Ebite Amafor in Isingwu Autonomous Community in Umuahia North Local Government Area of Abia State. The museum is the only war museum in Nigeria and it is run and managed by the Nigerian Federal Government through the National Commission for Museums and Monuments (NCMM).",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/National_War_Museum%2C_Umuahia.jpg/800px-National_War_Museum%2C_Umuahia.jpg"
-            },
+#     "States": [
+#         {
+#         "id": "1",
+#         "name": "Abia",
+#         "region": "South East",
+#         "region_id": "1",
+#         "capital": "Umuahia",
+#         "population": "2,833,999",
+#         "area": "6,320",
+#         "governor": "Okezie Ikpeazu",
+#         "deputy_governor": "Ude Oko Chukwu",
+#         "date_created": "27th August, 1991",
+#         "motto": "God's Own State",
+#         "website": "www.abiastate.gov.ng",
+#         "map": "https://en.wikipedia.org/wiki/Abia_State#/media/File:Nigeria_Abia_State_map.png",
+#         "description": "Abia is a state in the south eastern part of Nigeria. The capital is Umuahia and the major commercial city is Aba, formerly a British colonial government outpost. The state was created in 1991 from part of Imo State and its citizens are predominantly Igbo people (95% of population). It is one of the nine constituent states of the Niger Delta region.",
+#         "landmarks": [
+#             {
+#                 "name": "National War Museum",
+#                 "location": "Umuahia",
+#                 "description": "The National War Museum, Umuahia, is a museum in Umuahia, Nigeria, founded in 1985 by the Nigerian Federal Government. Major General Patrick Aziza (rtd) was its first curator. The museum has a collection of relics from the pre-colonial Nigeria era to the Biafran war. The museum is located at Ebite Amafor in Isingwu Autonomous Community in Umuahia North Local Government Area of Abia State. The museum is the only war museum in Nigeria and it is run and managed by the Nigerian Federal Government through the National Commission for Museums and Monuments (NCMM).",
+#                 "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/National_War_Museum%2C_Umuahia.jpg/800px-National_War_Museum%2C_Umuahia.jpg"
+#             },
 
-            {
-                "name": "Arochukwu Long Juju Slave Route",
-                "location": "Arochukwu",
-            },
+#             {
+#                 "name": "Arochukwu Long Juju Slave Route",
+#                 "location": "Arochukwu",
+#             },
 
-            {
-                "name": "Ojukwu Bunker",
-                "location": "Umuahia",
-            },
+#             {
+#                 "name": "Ojukwu Bunker",
+#                 "location": "Umuahia",
+#             },
 
-            {
-                "name": "Arochukwu Cave",
-                "location": "Arochukwu",
-            },
+#             {
+#                 "name": "Arochukwu Cave",
+#                 "location": "Arochukwu",
+#             },
 
-            {
-                "name": "Akwete Weaving",
-            },
+#             {
+#                 "name": "Akwete Weaving",
+#             },
 
-            {
-                "name": "Azumini Blue River",
-            },
+#             {
+#                 "name": "Azumini Blue River",
+#             },
 
-            {
-                "name": "Amakama Wooden Cave",
-            },
+#             {
+#                 "name": "Amakama Wooden Cave",
+#             },
 
-            {
-                "name": "Oguta Lake",
-            },
+#             {
+#                 "name": "Oguta Lake",
+#             },
 
-            {
-                "name": "Oguta Lake Holiday Complex",
-            },
-        ],
+#             {
+#                 "name": "Oguta Lake Holiday Complex",
+#             },
+#         ],
 
-        }
-    ]
-}
+#         }
+#     ]
+# }
 
 
 

@@ -4,7 +4,7 @@ from flask_restx import Api, Resource, fields, Namespace
 from ..utils.utils import db
 from ..models.users import User
 from http import HTTPStatus
-from ..models.data import Region, State, Lga, City, Area
+from ..models.data import Region, State, Lga, City, Area, load_dataset
 
 
 
@@ -12,17 +12,13 @@ from ..models.data import Region, State, Lga, City, Area
 search_namespace = Namespace('search', description = 'Search related operations')
 
 
-def load_dataset():
-    with open('dataset.py', 'r') as file:
-        dataset = json.load(file)
+@search_namespace.route('/load-dataset')
+class LoadDatasetResource(Resource):
+    def get(self):
+        load_dataset()
+        return {'message': 'Dataset loaded successfully'}
 
-    for region_data in dataset['Region']:
-        region = Region(name=region_data['name'])
-        db.session.add(region)
 
-        # Load other data models based on your dataset structure and relationships
-
-    db.session.commit()
 
 
 

@@ -4,6 +4,7 @@ from flask import Flask
 
 
 
+
 class Region(db.Model):
     __tablename__ = 'regions'
     id = db.Column(db.Integer(), primary_key=True)
@@ -111,14 +112,15 @@ class City(db.Model):
     
 
 
+
 def load_dataset():
     with open('dataset.py', 'r') as file:
         dataset = json.load(file)
 
-        for data in dataset['State']:
-            state = State(name=data['name'], population=data['population'])
-            db.session.add(state)
+    for region_data in dataset['Region']:
+        region = Region(name=region_data['name'])
+        db.session.add(region)
 
-        db.session.commit()
+        # Load other data models based on your dataset structure and relationships
 
-load_dataset()
+    db.session.commit()

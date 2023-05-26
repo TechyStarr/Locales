@@ -112,10 +112,10 @@ class City(db.Model):
 
 
 def load_dataset():
-    with open('dataset.json', 'r') as file:
+    with open('dataset.py', 'r') as file:
         dataset = json.load(file)
 
-        for data in dataset:
+        for data in dataset['State']:
             state = State(name=data['name'], population=data['population'])
             db.session.add(state)
 

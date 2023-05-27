@@ -1,7 +1,7 @@
 
 
 {
-    "Region": [
+    "Regions": [
         {
             "id" : "1",
             "name": "South East",
@@ -230,7 +230,147 @@
 
                 {
                     "name": ""
-                }
+                },
+
+            {
+                "id": "3",
+                "state": "Akwa Ibom",
+                "state_id": "2",
+                "capital": "Uyo",
+                "slogan": "Land of Promise",
+                "senatorial_districts": [
+                    "Akwa Ibom North East",
+                    "Akwa Ibom North West",
+                    "Akwa Ibom South"
+                ],
+                "lgas": [
+                    "Abak",
+                    "Eastern Obolo",
+                    "Eket",
+                    "Essien Udim",
+                    "Etimekpo",
+                    "Etinan",
+                    "Ibeno",
+                    "Ibesikpo Asutan",
+                    "Ibiono Ibom",
+                    "Ika",
+                    "Ikono",
+                    "Ikot Abasi",
+                    "Ikot Ekpene",
+                    "Ini",
+                    "Itu",
+                    "Mbo",
+                    "Mkpat Enin",
+                    "Nsit Ibom",
+                    "Nsit Ubium",
+                    "Obot Akara",
+                    "Okobo",
+                    "Onna",
+                    "Orukanam",
+                    "Oron",
+                    "Udung Uko",
+                    "Ukanafun",
+                    "Esit Eket",
+                    "Uruan",
+                    "Urue Offoung",
+                    "Oruko Ete",
+                    "Uyo"
+                ],
+                "landmass": "7,081 km2 (2,735 sq mi)",
+                "population": "5,450,758",
+                "dialect": "Ibibio",
+                "map": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Nigeria_Akwa_Ibom_state_map.png/250px-Nigeria_Akwa_Ibom_state_map.png",
+                "latitude": "4.9833",
+                "longitude": "7.9167",
+                "website": "http://www.akwaibomstate.gov.ng/",
+                "geo_politcal_zone": "South South",
+                "created_date": "23 September 1987",
+                "created_by": "General Ibrahim Babangida",
+                "past_governors": [
+                    "Idongesit Nkanga",
+                    "Victor Attah",
+                    "Godswill Akpabio",
+                    "Udom Gabriel Emmanuel"
+                ],
+                "borders": ["Cross River", "Abia", "Rivers", "Bayelsa"],
+                "known_for": [
+                    "Bridge of No Return, Ikot Abasi",
+                    "Amalgamtion House",
+                    "Ibibio Museu and State Park",
+                    "National Museum of Colonial History"
+                ]
+            },
+
+            {
+                "id": "4",
+                "state": "Anambra",
+                "capital": "Awka",
+                "slogan": "Light of the Nation",
+                "senatorial_districts": [
+                    "Anambra Central",
+                    "Anambra North",
+                    "Anambra South"
+                ],
+                "lgas": [
+                    "Aguata",
+                    "Akwa North",
+                    "Anambra",
+                    "Anambra-West",
+                    "Anaocha",
+                    "Awka-North",
+                    "Awka-South",
+                    "Ayamelum",
+                    "Dunukofia",
+                    "Ekwusigo",
+                    "Idemili-North",
+                    "Idemili-South",
+                    "Ihiala",
+                    "Imo",
+                    "Nibo",
+                    "Njikoka",
+                    "Nnewi-North",
+                    "Nnewi-South",
+                    "Ogbaru",
+                    "Olumba",
+                    "Onitsha-North",
+                    "Onitsha-South",
+                    "Orumba-North",
+                    "Orumba-South",
+                    "Oti",
+                    "Otu-Ocha",
+                    "Ubuluizor Ihiala",
+                    "Uyi"
+                ],
+                "landmass": "4,844 km2 (1,870 sq mi)",
+                "population": "4,182,032",
+                "dialect": "Igbo",
+                "map": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Nigeria_Akwa_Ibom_state_map.png/250px-Nigeria_Akwa_Ibom_state_map.png",
+                "latitude": "6.2107",
+                "longitude": "7.0323",
+                "website": "http://www.anambrastate.gov.ng/",
+                "geo_politcal_zone": "South East",
+                "created_date": "27 August 1991",
+                "created_by": "General Ibrahim Babangida",
+                "past_governors": [
+                    "Chukwuemeka Ezeife",
+                    "Mike Attah",
+                    "Chinwoke Mbadinuju",
+                    "Chris Ngige",
+                    "Peter Obi",
+                    "Virginia Etiaba",
+                    "Andy Uba",
+                    "Chukwuemeka Ezeife",
+                    "Chris Ngige",
+                    "Peter Obi",
+                    "Willie Obiano"
+                ],
+                "borders": ["Kogi", "Delta", "Abia", "Enugu", "Imo"],
+                "known_for": [
+                    "Ogbunike Caves",
+                    "Agulu Lake",
+                    "Ogbaukwu Caves and Waterfalls"
+                ]
+            }
 
 
 
@@ -246,21 +386,46 @@
             "capital": "Uyo",
             "population": "5,450,758",
             "area": "7,081"
-
-
-
-
+            
         }
+    ],
+
+
+    "Lgas": [
+        [
+            
 
 
 
 
 
+            {
+                "name": "Demsa",
+                "state": "Adamawa",
+                "state_id": "2",
+                "region_id": "5",
+                "code": "AD/DE",
+                "headquarters": "Demsa",
+                "zone": "Adamawa",
+                "senatorial_district": "Adamawa North",
+                "area": "1,200",
+                "population": "150,000",
+                "description": "Demsa is a Local Government Area of Adamawa State, Nigeria. Its headquarters are in the town of Demsa. It has an area of 1,200 km² and a population of 150,000 at the 2006 census. The postal code of the area is 641.",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/National_War_Museum%2C_Umuahia.jpg/800px-National_War_Museum%2C_Umuahia.jpg"
+            }
+
+            
 
 
 
 
-
-
+        ]
     ]
+
+
+
+
+
+
+
 }

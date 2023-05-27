@@ -117,13 +117,17 @@ def load_dataset():
     with open('api/models/dataset.json') as file:
         dataset = json.load(file)
 
-    for region_data in dataset['Region']:
+    for region_data in dataset['Regions']:
         region = Region(name=region_data['name'])
         db.session.add(region)
 
-    for state_data in dataset['State']:
+    for state_data in dataset['States']:
         state = State(name=state_data['name'])
         db.session.add(state)
+
+    # for lga_data in dataset['Lgas']:
+    #     lga = Lga(name=lga_data['name'])
+    #     db.session.add(lga)
 
         # Load other data models based on your dataset structure and relationships
 

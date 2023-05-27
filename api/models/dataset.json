@@ -1,0 +1,223 @@
+
+
+
+
+
+{
+    "Region": [
+        {
+            "id" : "1",
+            "name": "South East",
+            "states": [
+                "Abia",
+                "Anambra",
+                "Ebonyi",
+                "Enugu",
+                "Imo"
+            ]
+        },
+
+        {
+            "id": "2",
+            "name": "South South",
+            "states": [
+                "Akwa Ibom",
+                "Bayelsa",
+                "Cross River",
+                "Delta",
+                "Edo",
+                "Rivers"
+            ]
+        },
+
+        {
+            "id" : "3",
+            "name": "South West",
+            "states": [
+                "Ekiti",
+                "Lagos",
+                "Ogun",
+                "Ondo",
+                "Osun",
+                "Oyo"
+
+            ]
+        },
+
+        {
+            "id": "4",
+            "name": "North Central",
+            "states": [
+                "Benue",
+                "Kogi",
+                "Kwara",
+                "Nasarawa",
+                "Niger",
+                "Plateau",
+                "Federal Capital Territory"
+
+            ]
+        },
+
+        
+        {
+            "id": "5",
+            "name": "North East",
+            "states": [
+                "Adamawa",
+                "Bauchi",
+                "Borno",
+                "Gombe",
+                "Taraba",
+                "Yobe"
+            ]
+        },
+
+        {
+            "id" : "6",
+            "name": "North West",
+            "states": [
+                "Jigawa",
+                "Kaduna",
+                "Kano",
+                "Katsina",
+                "Kebbi",
+                "Sokoto",
+                "Zamfara"
+            ]
+        }
+    ],
+
+    "States": [
+        {
+            "id": "1",
+            "name": "Abia",
+            "region": "South East",
+            "region_id": "1",
+            "capital": "Umuahia",
+            "population": "2,833,999",
+            "area": "6,320",
+            "governor": "Okezie Ikpeazu",
+            "deputy_governor": "Ude Oko Chukwu",
+            "date_created": "27th August, 1991",
+            "motto": "God's Own State",
+            "website": "www.abiastate.gov.ng",
+            "map": "https://en.wikipedia.org/wiki/Abia_State#/media/File:Nigeria_Abia_State_map.png",
+            "description": "Abia is a state in the south eastern part of Nigeria. The capital is Umuahia and the major commercial city is Aba, formerly a British colonial government outpost. The state was created in 1991 from part of Imo State and its citizens are predominantly Igbo people (95% of population). It is one of the nine constituent states of the Niger Delta region.",
+            "landmarks": [
+                {
+                    "name": "National War Museum",
+                    "location": "Umuahia",
+                    "description": "The National War Museum, Umuahia, is a museum in Umuahia, Nigeria, founded in 1985 by the Nigerian Federal Government. Major General Patrick Aziza (rtd) was its first curator. The museum has a collection of relics from the pre-colonial Nigeria era to the Biafran war. The museum is located at Ebite Amafor in Isingwu Autonomous Community in Umuahia North Local Government Area of Abia State. The museum is the only war museum in Nigeria and it is run and managed by the Nigerian Federal Government through the National Commission for Museums and Monuments (NCMM).",
+                    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/National_War_Museum%2C_Umuahia.jpg/800px-National_War_Museum%2C_Umuahia.jpg"
+                },
+
+                {
+                    "name": "Arochukwu Long Juju Slave Route",
+                    "location": "Arochukwu"
+                },
+
+                {
+                    "name": "Ojukwu Bunker",
+                    "location": "Umuahia"
+                },
+
+                {
+                    "name": "Arochukwu Cave",
+                    "location": "Arochukwu"
+                },
+
+                {
+                    "name": "Akwete Weaving"
+                },
+
+                {
+                    "name": "Azumini Blue River"
+                },
+
+                {
+                    "name": "Amakama Wooden Cave"
+                },
+
+                {
+                    "name": "Oguta Lake"
+                },
+
+                {
+                    "name": "Oguta Lake Holiday Complex"
+                }
+            ]
+        },
+
+        {
+            
+            "id": "2",
+            "name": "Adamawa",
+            "region": "North East",
+            "region_id": "2",
+            "capital": "Yola",
+            "population": "3,168,101",
+            "area": "36,917",
+            "postal_code": "640001",
+            "local_government_areas": [
+                {
+                    "name": "Demsa",
+                    "code": "AD/DE",
+                    "headquarters": "Demsa",
+                    "zone": "Adamawa",
+                    "senatorial_district": "Adamawa North",
+                    "area": "1,200",
+                    "population": "150,000",
+                    "description": "Demsa is a Local Government Area of Adamawa State, Nigeria. Its headquarters are in the town of Demsa. It has an area of 1,200 km² and a population of 150,000 at the 2006 census. The postal code of the area is 641.",
+                    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/National_War_Museum%2C_Umuahia.jpg/800px-National_War_Museum%2C_Umuahia.jpg"
+                },
+
+                {
+                    "name": "Fufore",
+                    "code": "AD/FF",
+                    "headquarters": "Fufore",
+                    "zone": "Adamawa",
+                    "senatorial_district": "Adamawa North",
+                    "area": "1,200",
+                    "population": "150,000",
+                    "description": "Fufore is a Local Government Area of Adamawa State, Nigeria. Its headquarters are in the town of Fufore. It has an area of 1,200 km² and a population of 150,000 at the 2006 census. The postal code of the area is 641.",
+                    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/National_War_Museum%2C_Umuahia.jpg/800px-National_War_Museum%2C_Umuahia.jpg"
+                },
+
+                {
+                    "name": "Ganye",
+                    "code": "AD/GY",
+                    "headquarters": "Ganye",
+                    "zone": "Adamawa",
+                    "senatorial_district": "Adamawa South",
+                    "area": "1,200",
+                    "population": "150,000",
+                    "description": "Ganye is a Local Government Area of Adamawa State, Nigeria. Its headquarters are in the town of Ganye. It has an area of 1,200 km² and a population of 150,000 at the 2006 census. The postal code of the area is 641.",
+                    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/National_War_Museum%2C_Umuahia.jpg/800px-National_War_Museum%2C_Umuahia.jpg"
+                }
+            ]
+        },
+
+        {
+            "id": "3",
+            "name": "Akwa Ibom",
+            "region": "South South",
+            "region_id": "3",
+            "capital": "Uyo",
+            "population": "5,450,758",
+            "area": "7,081",
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+    ]
+}

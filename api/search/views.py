@@ -19,7 +19,13 @@ class LoadDatasetResource(Resource):
         return {'message': 'Dataset loaded successfully'}
 
 
-
+@search_namespace.route('/read-dataset')
+class readData(Resource):
+    def get(self):
+        # load_dataset()
+        f = open('api/models/dataset.json')
+        print(f.read())
+        return {'message': 'Dataset loaded successfully'}
 
 
 

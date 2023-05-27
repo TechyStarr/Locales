@@ -114,7 +114,7 @@ class City(db.Model):
 
 
 def load_dataset():
-    with open('dataset.py', 'r') as file:
+    with open('api/models/dataset.json') as file:
         dataset = json.load(file)
 
     for region_data in dataset['Region']:

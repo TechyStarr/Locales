@@ -1,8 +1,5 @@
 
 
-
-
-
 {
     "Region": [
         {
@@ -88,6 +85,8 @@
         }
     ],
 
+
+
     "States": [
         {
             "id": "1",
@@ -97,6 +96,27 @@
             "capital": "Umuahia",
             "population": "2,833,999",
             "area": "6,320",
+            "postal_code": "440001",
+            "No_of_LGAs": "17",
+            "LGAs": [
+                "Aba North",
+                "Aba South",
+                "Arochukwu",
+                "Bende",
+                "Isuikwuato",
+                "Osisioma-Ngwa",
+                "Obioma-Ngwa",
+                "Ohafia",
+                "Ikwuano",
+                "Umu-Nneochi",
+                "Isiala Ngwa South",
+                "Isiala Ngwa North",
+                "Ugwunagbo",
+                "Ukwa West",
+                "Ukwa East",
+                "Umuahia South",
+                "Umuahia North"
+            ],
             "governor": "Okezie Ikpeazu",
             "deputy_governor": "Ude Oko Chukwu",
             "date_created": "27th August, 1991",
@@ -194,9 +214,29 @@
                     "population": "150,000",
                     "description": "Ganye is a Local Government Area of Adamawa State, Nigeria. Its headquarters are in the town of Ganye. It has an area of 1,200 km² and a population of 150,000 at the 2006 census. The postal code of the area is 641.",
                     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/National_War_Museum%2C_Umuahia.jpg/800px-National_War_Museum%2C_Umuahia.jpg"
+                },
+
+                {
+                    "name": "Girei",
+                    "code": "AD/GR",
+                    "headquarters": "Girei",
+                    "zone": "Adamawa",
+                    "senatorial_district": "Adamawa Central",
+                    "area": "1,200",
+                    "population": "150,000",
+                    "description": "Girei is a Local Government Area of Adamawa State, Nigeria. Its headquarters are in the town of Girei. It has an area of 1,200 km² and a population of 150,000 at the 2006 census. The postal code of the area is 641.",
+                    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/National_War_Museum%2C_Umuahia.jpg/800px-National_War_Museum%2C_Umuahia.jpg"
+                },
+
+                {
+                    "name": ""
                 }
+
+
+
             ]
         },
+
 
         {
             "id": "3",
@@ -205,7 +245,10 @@
             "region_id": "3",
             "capital": "Uyo",
             "population": "5,450,758",
-            "area": "7,081",
+            "area": "7,081"
+
+
+
 
         }
 

@@ -121,6 +121,10 @@ def load_dataset():
         region = Region(name=region_data['name'])
         db.session.add(region)
 
+    for state_data in dataset['State']:
+        state = State(name=state_data['name'])
+        db.session.add(state)
+
         # Load other data models based on your dataset structure and relationships
 
     db.session.commit()

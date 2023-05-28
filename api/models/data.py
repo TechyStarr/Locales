@@ -9,7 +9,8 @@ class Region(db.Model):
     __tablename__ = 'regions'
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(45), nullable=False, unique=True)
-    states = db.relationship('State', backref='region', lazy=True)
+    state = db.relationship('State', backref='regions', lazy=True)
+
 
     def __repr__(self):
         return f"<Region {self.name}>"
@@ -136,7 +137,6 @@ def load_dataset():
     for region_data in dataset['Regions']:
         region = Region(
             name=region_data['name'],
-            states=region_data['states']
         )
         
         db.session.add(region)
@@ -150,8 +150,8 @@ def load_dataset():
             population=state_data['population'],
             area=state_data['area'],
             postal_code=state_data['postal_code'],
-            No_of_LGAs=state_data['No_of_LGAs'],
-            local_government_areas=state_data['local_government_areas']
+            # No_of_LGAs=state_data['No_of_LGAs'],
+            # local_government_areas=state_data['local_government_areas']
             
             
             )

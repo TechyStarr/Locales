@@ -31,7 +31,7 @@ region_model= search_namespace.model(
     'Region', {
         'id': fields.String(required=True),
         'name': fields.String(required=True, description="Course Name"),
-        'states': fields.Nested((state_model), required=True, description="States"),
+        'state': fields.Nested((state_model), required=True, description="States"),
     }
 )
 
@@ -55,7 +55,7 @@ class readData(Resource):
 # Regions
 
 @search_namespace.route('/regions')
-class SearchResource(Resource):
+class Retrieve(Resource):
     @search_namespace.marshal_with(region_model, as_list=True)
     @search_namespace.doc(
         description='Get all Regions',
@@ -64,6 +64,42 @@ class SearchResource(Resource):
         regions = Region.query.all()
 
         return regions, HTTPStatus.OK
+    
+
+
+@search_namespace.route('/create')
+class Create(Resource):
+    @search_namespace.expect(region_model)
+    @search_namespace.marshal_with(region_model)
+    @search_namespace.doc(
+        description='Create a new Region',
+    )
+    def post(self):
+        data = search_namespace.payload
+        region = Region.query.filter_by(name=data['name']).first()
+        if region:
+            return {'message': 'Region already exists'}, HTTPStatus.BAD_REQUEST
+        region = Region(
+            name=data['name']
+        )   
+        region.save()
+        return region, HTTPStatus.CREATED
+    
+
+
+@search_namespace.route('/regions/<string:region_id>')
+class Update(Resource): 
+    @search_namespace.marshal_with(region_model)
+    @search_namespace.doc(
+        description='Get a Region by ID',
+    )
+    def get(self, region_id):
+        region = Region.query.filter_by(id=region_id).first()
+        if not region:
+            return {'message': 'Region not found'}, HTTPStatus.NOT_FOUND
+        response = {region: region.json()}
+        return response, HTTPStatus.OK
+
 
 
 
@@ -102,17 +138,3 @@ class Regions(Resource):
     
 
 
-
-# # Example endpoint for searching states by name
-# @api.route('/states/search')
-# class StateSearchResource(Resource):
-#     def get(self):
-#         search_query = request.args.get('query')  # Get the search query from the request parameters
-
-#         # Perform the search query on the states
-#         search_results = State.query.filter(State.name.ilike(f'%{search_query}%')).all()
-
-#         # Convert the search results to a list of dictionaries for JSON response
-#         results = [{'id': state.id, 'name': state.name} for state in search_results]
-
-#         return {'results': results}

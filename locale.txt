@@ -35,6 +35,7 @@ https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.867052
 
 
 Approach
+    Handle Authentication and Authorization, users(developers) will need an api key to gain access to the api
     Build search function
     Integrate search function with google maps api
     Flask caching
@@ -46,6 +47,9 @@ Approach
     Build a function to get the timezone of the location
     Build a function to get the current time of the location
     Build a function to get the current weather of the location
+
+
+
 
 
 

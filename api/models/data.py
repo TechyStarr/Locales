@@ -9,7 +9,7 @@ class Region(db.Model):
     __tablename__ = 'regions'
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(45), nullable=False, unique=True)
-    cities = db.relationship('City', backref='region', lazy=True)
+    states = db.relationship('State', backref='region', lazy=True)
 
     def __repr__(self):
         return f"<Region {self.name}>"
@@ -134,11 +134,30 @@ def load_dataset():
         dataset = json.load(file)
 
     for region_data in dataset['Regions']:
-        region = Region(name=region_data['name'])
+        region = Region(
+            name=region_data['name'],
+            states=region_data['states']
+        )
+        
         db.session.add(region)
 
     for state_data in dataset['States']:
-        state = State(name=state_data['name'])
+        state = State(
+            name=state_data['name'],
+            region=state_data['region'],
+            region_id=state_data['region_id'],
+            capital=state_data['capital'],
+            population=state_data['population'],
+            area=state_data['area'],
+            postal_code=state_data['postal_code'],
+            No_of_LGAs=state_data['No_of_LGAs'],
+            local_government_areas=state_data['local_government_areas']
+            
+            
+            )
+        
+
+
         db.session.add(state)
 
     # for lga_data in dataset['Lgas']:

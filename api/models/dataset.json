@@ -97,8 +97,7 @@
             "population": "2,833,999",
             "area": "6,320",
             "postal_code": "440001",
-            "No_of_LGAs": "17",
-            "LGAs": [
+            "lgas": [
                 "Aba North",
                 "Aba South",
                 "Arochukwu",
@@ -179,7 +178,7 @@
             "population": "3,168,101",
             "area": "36,917",
             "postal_code": "640001",
-            "local_government_areas": [
+            "lgas": [
                 {
                     "name": "Demsa",
                     "code": "AD/DE",

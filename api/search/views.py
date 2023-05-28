@@ -19,7 +19,10 @@ state_model = search_namespace.model(
         'region_id': fields.String(required=True, description="Region ID"),
         'capital': fields.String(required=True, description="Capital"),
         'population': fields.String(required=True, description="Population"),
-        'area': fields.String(required=True, description="Area")
+        'area': fields.String(required=True, description="Area"),
+        'postal_code': fields.String(required=True, description="Postal Code"),
+        # 'No_of_LGAs': fields.String(required=True, description="No of LGAs"),
+        'lgas': fields.String(required=True, description="Local Government Areas"),
     }
 )
 
@@ -83,7 +86,8 @@ class Create(Resource):
             name=data['name']
         )   
         region.save()
-        return region, HTTPStatus.CREATED
+        response = {region: region, 'message': 'Region created successfully'}
+        return response, HTTPStatus.CREATED
     
 
 

@@ -37,12 +37,12 @@ class State(db.Model):
     name = db.Column(db.String(45), nullable=False, unique=True)
     region = db.Column(db.String(45), nullable=False)
     region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'), nullable=False)
-    capital = db.Column(db.String(45), nullable=False)
-    population = db.Column(db.String(100), nullable=False)
-    area = db.Column(db.String(100), nullable=False)
-    postal_code = db.Column(db.String(100), nullable=False)
-    No_of_LGAs = db.Column(db.String(100), nullable=False)
-    local_government_areas = db.Column(db.String(100), nullable=False)
+    capital = db.Column(db.String(45))
+    population = db.Column(db.String(100))
+    area = db.Column(db.String(100))
+    postal_code = db.Column(db.String(100))
+    No_of_LGAs = db.Column(db.String(100))
+    lgas = db.relationship('Lga', backref='state', lazy=True)
 
     
 
@@ -75,7 +75,7 @@ class Lga(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(45), nullable=False, unique=True)
     region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'), nullable=False)
-    # areas = db.relationship('Area', backref='city', lazy=True)
+    state_id = db.Column(db.Integer(), db.ForeignKey('states.id'), nullable=False)
 
     def __repr__(self):
         return f"<City {self.name}>"
@@ -151,18 +151,29 @@ def load_dataset():
             area=state_data['area'],
             postal_code=state_data['postal_code'],
             # No_of_LGAs=state_data['No_of_LGAs'],
-            # local_government_areas=state_data['local_government_areas']
-            
-            
+            # lgas=state_data['lgas']
             )
         
 
 
         db.session.add(state)
 
-    # for lga_data in dataset['Lgas']:
-    #     lga = Lga(name=lga_data['name'])
-    #     db.session.add(lga)
+    for lga_data in dataset['Lgas']:
+        lga = Lga(
+            name=lga_data['name'],
+            code = lga_data['code'],
+            headquarters = lga_data['headquarters'],
+            zone = lga_data['zone'],
+            senatorial_district = lga_data['senatorial_district'],
+            area = lga_data['area'],
+            population = lga_data['population'],
+            description = lga_data['description'],
+            image = lga_data['image'],
+            state_id=lga_data['state_id'],
+            region_id=lga_data['region_id']
+            
+            )
+        db.session.add(lga)
 
         # Load other data models based on your dataset structure and relationships
 

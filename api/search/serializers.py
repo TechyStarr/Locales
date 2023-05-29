@@ -4,7 +4,6 @@ def serialized_region(region):
     return {
         'id': region.id,
         'name': region.name,
-        'states': region.states
     }
 
 

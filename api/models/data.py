@@ -42,6 +42,7 @@ class State(db.Model):
     area = db.Column(db.String(100))
     postal_code = db.Column(db.String(100))
     # No_of_LGAs = db.Column(db.String(100))
+    # language = db.Column(db.String(100))
     lgas = db.relationship('Lga', backref='state', lazy=True) # One to many relationship with Lga lazy=True means that the data is loaded on access
 
     
@@ -76,6 +77,16 @@ class Lga(db.Model):
     name = db.Column(db.String(45), nullable=False, unique=True)
     region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'), nullable=False)
     state_id = db.Column(db.Integer(), db.ForeignKey('states.id'), nullable=False)
+    area = db.Column(db.String(100))
+    senatorial_district = db.Column(db.String(45))
+    population = db.Column(db.String(100))
+    headquarters = db.Column(db.String(100))
+    description = db.Column(db.String(100))
+    created_date = db.Column(db.DateTime(), default=db.func.current_timestamp())
+    created_by = db.Column(db.String(100))
+    landmass = db.Column(db.String(100))
+    # language = db.Column(db.String(100))
+    borders = db.Column(db.String(100))
 
     def __repr__(self):
         return f"<City {self.name}>"
@@ -158,24 +169,23 @@ def load_dataset():
 
         db.session.add(state)
 
-    
-    for lga_data_list in dataset['LGAs']: # lga_data_list is a list of dictionaries containing lga data
-        for lga_data in lga_data_list: 
-            lga = Lga(
-                state_id=lga_data['state_id'],
-                lgas=lga_data['lgas'],
-                state=lga_data['state'],
-                senatorial_district=lga_data['senatorial_district'],
-                area=lga_data['area'],
-                population=lga_data['population'],
-                headquarters=lga_data['headquarters'],
-                description=lga_data['description'],
-                created_date=lga_data['created_by'],
-                created_by=lga_data['created_at'],
-                landmass=lga_data['landmass'],
-                borders=lga_data['borders'],
-            )
-            db.session.add(lga)
+
+    for lga_data in dataset['LGAs']: 
+        lga = Lga(
+            name=lga_data['lga'],
+            state_id=lga_data['state_id'],
+            state=state,
+            senatorial_district=lga_data['senatorial_district'],
+            area=lga_data['area'],
+            population=lga_data['population'],
+            headquarters=lga_data['headquarters'],
+            description=lga_data['description'],
+            created_date=lga_data['created_date'],
+            created_by=lga_data['created_by'],
+            landmass=lga_data['landmass'],
+            borders=lga_data['borders'],
+        )
+        db.session.add(lga)
 
 
         # Load other data models based on your dataset structure and relationships

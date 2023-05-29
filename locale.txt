@@ -49,6 +49,36 @@ Approach
     Build a function to get the current weather of the location
 
 
+For website
+    Fun places in each city
+    Notable places/landmarks in each city/state
+    Weather in each city/state
+    NYSC camps in each state
+    Hotels in each state
+    Restaurants in each state
+    Tourist attractions in each state
+    Universities in each state
+    Hospitals in each state
+    Banks in each state
+    Police stations in each state
+    Fire stations in each state
+    Airports in each state
+    Bus stations in each state
+    Train stations in each state
+    Shopping malls in each state
+    Stadiums in each state
+    Parks in each state
+    Beaches in each state
+    Museums in each state
+    Cinemas in each state
+    Night clubs in each state
+    Bars in each state
+    Libraries in each state
+    Zoo in each state
+    Amusement parks in each state
+    
+
+
 
 
 

@@ -58,6 +58,57 @@ class readData(Resource):
         return {'message': 'Dataset loaded successfully'}
     
 
+
+@search_namespace.route('/')
+class Query(Resource):
+    @search_namespace.doc('search_query')
+    @search_namespace.marshal_with(state_model)
+
+    def post(self):
+        query = request.args.get('query') # get the query string from the url
+
+
+        keyword = request.args.get('keyword')  # Get the search keyword from the query parameters
+        if keyword:
+            # Perform the search query based on the keyword
+            # You can customize the search logic based on your requirements
+            results = State.query.filter(
+                db.or_(
+                    State.name.ilike(f'%{keyword}%'),  # Search by state name
+                    State.capital.ilike(f'%{keyword}%'),  # Search by state capital
+                    # State.local_government_areas.ilike(f'%{keyword}%')  # Search by local government areas
+                )
+            ).all()
+
+            # Serialize the search results
+            data = []
+            for state in results:
+                state_data = {
+                    'id': state.id,
+                    'name': state.name,
+                    'region_id': state.region_id,
+                    'capital': state.capital,
+                    'population': state.population,
+                    'area': state.area,
+                    'postal_code': state.postal_code,
+                    'No_of_LGAs': state.No_of_LGAs,
+                    'lgas': state.lgas
+                }
+                data.append(state_data)
+
+            return results, 200
+        else:
+            return {'message': 'No keyword provided'}, 400
+
+
+
+
+    
+    
+
+
+
+
 # Regions
 
 @search_namespace.route('/regions')
@@ -68,6 +119,8 @@ class Retrieve(Resource):
     )
     def get(self):
         regions = Region.query.all()
+        if regions is None:
+            return {'message': 'No Region found'}, HTTPStatus.NOT_FOUND
 
         return regions, HTTPStatus.OK
     
@@ -104,11 +157,23 @@ class Update(Resource):
         region = Region.query.filter_by(id=region_id).first()
         if not region:
             return {'message': 'Region not found'}, HTTPStatus.NOT_FOUND
-        response = {region: region.json()}
-        return response, HTTPStatus.OK
+        return region, HTTPStatus.OK
 
 
 
+# retrieve data under a region
+@search_namespace.route('/regions/<string:region_id>/states')
+class Retrieve(Resource):
+    @search_namespace.marshal_with(state_model, as_list=True)
+    @search_namespace.doc(
+        description='Get all States under a Region',
+    )
+    def get(self, region_id):
+        states = State.query.filter_by(region_id=region_id).all()
+        if states is None:
+            return {'message': 'No State found'}, HTTPStatus.NOT_FOUND
+
+        return states, HTTPStatus.OK
 
 
 

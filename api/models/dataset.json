@@ -2401,7 +2401,7 @@
             "id": 34,
             "state": "Zamfara",
             "region": "North West",
-            "region_id": "1",
+            "region_id": "6",
             "capital": "Gusau",
             "slogan": "Farming is Our Pride",
             "senatorial_districts": [
@@ -2643,10 +2643,6 @@
             "area": "140",
             "population": "230,596",
             "headquarters": "Obi Ngwa",
-            "description": "Obi Ngwa is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Obi Ngwa. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Ohafia"]
         },
 
@@ -2659,10 +2655,6 @@
             "area": "140",
             "population": "230,596",
             "headquarters": "Ohafia",
-            "description": "Ohafia is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Ohafia. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
@@ -2675,10 +2667,6 @@
             "area": "140",
             "population": "230,596",
             "headquarters": "Osisioma Ngwa",
-            "description": "Osisioma Ngwa is a Local Government Area of Abia State, Nigeria",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
@@ -2691,10 +2679,6 @@
             "area": "140",
             "population": "230,596",
             "headquarters": "Ugwunagbo",
-            "description": "Ugwunagbo is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Ugwunagbo. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
@@ -2707,10 +2691,6 @@
             "area": "140",
             "population": "230,596",
             "headquarters": "Ukwa East",
-            "description": "Ukwa East is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Ukwa East. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
@@ -2723,10 +2703,6 @@
             "area": "140",
             "population": "230,596",
             "headquarters": "Ukwa West",
-            "description": "Ukwa West",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
@@ -2739,10 +2715,6 @@
             "area": "140",
             "population": "230,596",
             "headquarters": "Umuahia North",
-            "description": "Umuahia North is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Umuahia North. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
@@ -2755,10 +2727,6 @@
             "area": "140",
             "population": "230,596",
             "headquarters": "Umuahia South",
-            "description": "Umuahia South is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Umuahia South. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
@@ -2771,156 +2739,135 @@
             "area": "140",
             "population": "230,596",
             "headquarters": "Umu Nneochi",
-            "description": "Umu Nneochi is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Umu Nneochi. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
             "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
         },
 
         {
-            "id": 18,
-            "state_id": 1,
-            "lga": "Isiala Ngwa South",
-            "state":"Abia",
-            "senatorial_district": "Abia Central",
+            "id": 1,
+            "state_id": 2,
+            "lga": "Demsa",
+            "state":"Adamawa",
+            "senatorial_district": "Adamawa North",
             "area": "140",
             "population": "230,596",
-            "headquarters": "Isiala Ngwa South",
-            "description": "Isiala Ngwa South is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Isiala Ngwa South. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
-            "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
+            "headquarters": "Demsa",
+            "borders": [
+                "Ganye",
+                "Guyuk",
+                "Lamurde",
+                "Numan",
+                "Song"
+            ]
         },
 
         {
-            "id": 19,
-            "state_id": 1,
-            "lga": "Isiala Ngwa North",
-            "state":"Abia",
-            "senatorial_district": "Abia Central",
+            "id": 2,
+            "state_id": 2,
+            "lga": "Fufore",
+            "state":"Adamawa",
+            "senatorial_district": "Adamawa North",
             "area": "140",
             "population": "230,596",
-            "headquarters": "Isiala Ngwa North",
-            "description": "Isiala Ngwa North is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Isiala Ngwa North. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
-            "borders": ["Arochukwu", "Bende", "Ikwuano", "Isuikwuato"]
+            "headquarters": "Fufore",
+            "borders": [
+                "Ganye",
+                "Guyuk",
+                "Lamurde",
+                "Numan",
+                "Song"
+            ]
         },
 
         {
-            "id": 20,
-            "state_id": 1,
-            "lga": "Isuikwuato",
-            "state":"Abia",
-            "senatorial_district": "Abia North",
+            "id": 3,
+            "state_id": 2,
+            "lga": "Ganye",
+            "state":"Adamawa",
+            "senatorial_district": "Adamawa South",
             "area": "140",
             "population": "230,596",
-            "headquarters": "Isuikwuato",
-            "description": "Isuikwuato is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Isuikwuato. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
-            "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North"]
-        },
-        
-        {
-            "id": 21,
-            "state_id": 1,
-            "lga": "Obi Ngwa",
-            "state":"Abia",
-            "senatorial_district": "Abia Central",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Obi Ngwa",
-            "description": "Obi Ngwa is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Obi Ngwa. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
-            "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
+            "headquarters": "Ganye",
+            "borders": [
+                "Ganye",
+                "Guyuk",
+                "Lamurde",
+                "Numan",
+                "Song"
+            ]
         },
 
         {
-            "id": 22,
-            "state_id": 1,
-            "lga": "Ohafia",
-            "state":"Abia",
-            "senatorial_district": "Abia North",
+            "id": 4,
+            "state_id": 2,
+            "lga": "Girei",
+            "state":"Adamawa",
+            "senatorial_district": "Adamawa North",
             "area": "140",
             "population": "230,596",
-            "headquarters": "Ohafia",
-            "description": "Ohafia is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Ohafia. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
-            "borders": ["Arochukwu", "Bende"]
+            "headquarters": "Girei",
+            "borders": [
+                "Ganye",
+                "Guyuk",
+                "Lamurde",
+                "Numan",
+                "Song"
+            ]
         },
 
         {
-            "id": 23,
-            "state_id": 1,
-            "lga": "Osisioma Ngwa",
-            "state":"Abia",
-            "senatorial_district": "Abia Central",
+            "id": 5,
+            "state_id": 2,
+            "lga": "Gombi",
+            "state":"Adamawa",
+            "senatorial_district": "Adamawa North",
             "area": "140",
             "population": "230,596",
-            "headquarters": "Osisioma Ngwa",
-            "description": "Osisioma Ngwa is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Osisioma Ngwa. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
-            "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
-        },
-        
-        {
-            "id": 24,
-            "state_id": 1,
-            "lga": "Ugwunagbo",
-            "state":"Abia",
-            "senatorial_district": "Abia South",
-            "area": "140",
-            "population": "230,596",
-            "headquarters": "Ugwunagbo",
-            "description": "Ugwunagbo is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Ugwunagbo. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
-            "borders": ["Arochukwu", "Bende", "Ikwuano", "Isiala Ngwa North", "Isuikwuato"]
+            "headquarters": "Gombi",
+            "borders": [
+                "Ganye",
+                "Guyuk",
+                "Lamurde",
+                "Numan",
+                "Song"
+            ]
         },
 
         {
-            "id": 25,
-            "state_id": 1,
-            "lga": "Ukwa East",
-            "state":"Abia",
-            "senatorial_district": "Abia South",
+            "id": 6,
+            "state_id": 2,
+            "lga": "Guyuk",
+            "state":"Adamawa",
+            "senatorial_district": "Adamawa South",
             "area": "140",
             "population": "230,596",
-            "headquarters": "Ukwa East",
-            "description": "Ukwa East is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Ukwa East. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
-            "borders": ["Ukwa West"]
+            "headquarters": "Guyuk",
+            "borders": [
+                "Ganye",
+                "Guyuk",
+                "Lamurde",
+                "Numan",
+                "Song"
+            ]
         },
 
         {
-            "id": 26,
-            "state_id": 1,
-            "lga": "Ukwa West",
-            "state":"Abia",
-            "senatorial_district": "Abia South",
+            "id": 7,
+            "state_id": 2,
+            "lga": "Hong",
+            "state":"Adamawa",
+            "senatorial_district": "Adamawa North",
             "area": "140",
             "population": "230,596",
-            "headquarters": "Ukwa West",
-            "description": "Ukwa West is a Local Government Area of Abia State, Nigeria. Its headquarters are in the town of Ukwa West. It has an area of 140 km² and a population of 230,596 at the 2006 census.",
-            "created_date": "27 August 1991",
-            "created_by": "Gen. Ibrahim Babangida",
-            "landmass": "140 km2 (54 sq mi)",
-            "borders": ["Ukwa East"]
-        },
+            "headquarters": "Hong",
+            "borders": [
+                "Ganye",
+                "Guyuk",
+                "Lamurde",
+                "Numan",
+                "Song"
+            ]
+        }
+
     ]
 
 }

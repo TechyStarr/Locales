@@ -41,7 +41,7 @@ class State(db.Model):
     population = db.Column(db.String(100))
     area = db.Column(db.String(100))
     postal_code = db.Column(db.String(100))
-    No_of_LGAs = db.Column(db.String(100))
+    # No_of_LGAs = db.Column(db.String(100))
     lgas = db.relationship('Lga', backref='state', lazy=True) # One to many relationship with Lga lazy=True means that the data is loaded on access
 
     
@@ -71,7 +71,7 @@ class State(db.Model):
 
 
 class Lga(db.Model):
-    __tablename__ = 'lga'
+    __tablename__ = 'lgas'
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(45), nullable=False, unique=True)
     region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'), nullable=False)
@@ -153,28 +153,29 @@ def load_dataset():
             # No_of_LGAs=state_data['No_of_LGAs'],
             )
         
-    # for lga_name in dataset['Lgas']:
+    # for lga_name in dataset['lgas']: 
     #     lga = Lga(name=lga_name, state=state)
 
         db.session.add(state)
 
     
-    # for lga_data_list in dataset['Lgas']:
-    #     for lga_data in lga_data_list:
-    #         lga = Lga(
-    #             name=lga_data['name'],
-                # code=lga_data['code'],
-                # headquarters=lga_data['headquarters'],
-                # zone=lga_data['zone'],
-                # senatorial_district=lga_data['senatorial_district'],
-                # area=lga_data['area'],
-                # population=lga_data['population'],
-                # description=lga_data['description'],
-                # image=lga_data['image'],
-                # state_id=lga_data['state_id'],
-                # region_id=lga_data['region_id']
-            # )
-            # db.session.add(lga)
+    for lga_data_list in dataset['LGAs']: # lga_data_list is a list of dictionaries containing lga data
+        for lga_data in lga_data_list: 
+            lga = Lga(
+                state_id=lga_data['state_id'],
+                lgas=lga_data['lgas'],
+                state=lga_data['state'],
+                senatorial_district=lga_data['senatorial_district'],
+                area=lga_data['area'],
+                population=lga_data['population'],
+                headquarters=lga_data['headquarters'],
+                description=lga_data['description'],
+                created_date=lga_data['created_by'],
+                created_by=lga_data['created_at'],
+                landmass=lga_data['landmass'],
+                borders=lga_data['borders'],
+            )
+            db.session.add(lga)
 
 
         # Load other data models based on your dataset structure and relationships

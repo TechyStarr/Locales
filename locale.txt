@@ -82,6 +82,9 @@ For website
 
 
 
+"""
+    Add tags for political matters, entertainment spots, religious talks, etc
+
 
 
 

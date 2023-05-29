@@ -40,34 +40,6 @@ region_model= search_ns.model(
 
 
 
-
-# @search_ns.route('/')
-# class QueryRegions(Resource):
-#     @search_ns.doc('search_region')
-#     @search_ns.marshal_with(region_model)
-
-#     def post(self):
-
-#         keyword = request.args.get('keyword')  # Get the search keyword from the query parameters
-#         if keyword:
-#             # Perform the search query based on the keyword
-#             # You can customize the search logic based on your requirements
-#             results = Region.query.filter(
-#                 db.or_(
-#                     Region.name.ilike(f'%{keyword}%'),  # Search by state name
-#                     # Region.state.ilike(f'%{keyword}%'),  # Search by state capital
-#                     # State.local_government_areas.ilike(f'%{keyword}%')  # Search by local government areas
-#                 )
-#             ).all()
-
-#             data = [serialized_region(region) for region in results]
-
-#             return results, 200
-#         else:
-#             return {'message': 'Enter a search keyword'}, 400
-        
-
-
 @search_ns.route('/')
 class QueryStates(Resource):
     @search_ns.doc('search_state')
@@ -172,29 +144,4 @@ class QueryStates(Resource):
 
 
 
-
-# @search_ns.route('/')
-# class QueryRegions(Resource):
-#     @search_ns.doc('search_region')
-#     @search_ns.marshal_with(region_model)
-
-#     def post(self):
-
-#         keyword = request.args.get('keyword')  # Get the search keyword from the query parameters
-#         if keyword:
-#             # Perform the search query based on the keyword
-#             # You can customize the search logic based on your requirements
-#             results = Region.query.filter(
-#                 db.or_(
-#                     Region.name.ilike(f'%{keyword}%'),  # Search by state name
-#                     Region.state.ilike(f'%{keyword}%'),  # Search by state capital
-#                     # State.local_government_areas.ilike(f'%{keyword}%')  # Search by local government areas
-#                 )
-#             ).all()
-
-#             data = [serialized_region(region) for region in results]
-
-#             return results, 200
-#         else:
-#             return {'message': 'Enter a search keyword'}, 400
 

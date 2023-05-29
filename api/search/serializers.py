@@ -1,4 +1,13 @@
-from ..models.data import State, Region
+from ..models.data import State, Region, Lga
+
+def serialized_region(region):
+    return {
+        'id': region.id,
+        'name': region.name,
+        'states': region.states
+    }
+
+
 
 def serialized_state(state):
     return {
@@ -10,5 +19,7 @@ def serialized_state(state):
         'area': state.area,
         'postal_code': state.postal_code,
         'No_of_LGAs': state.No_of_LGAs,
-        'local_government_areas': state.local_government_areas
+        'lgas': state.lgas
     }
+
+

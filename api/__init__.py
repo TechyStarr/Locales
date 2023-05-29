@@ -2,6 +2,7 @@ from flask import Flask
 from flask_restx import Api
 from .auth.views import auth_namespace
 from .search.views import search_namespace
+from .search.search import search_ns
 from .config.config import config_dict
 from .utils.utils import db
 from .models.users import User
@@ -41,6 +42,7 @@ def create_app(config=config_dict['dev']):
 
     api.add_namespace(auth_namespace, path='/auth')
     api.add_namespace(search_namespace, path='/search')
+    api.add_namespace(search_ns, path='/query')
 
 
 
@@ -59,3 +61,4 @@ def create_app(config=config_dict['dev']):
 
 
     return app
+

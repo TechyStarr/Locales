@@ -5,8 +5,7 @@ from ..utils.utils import db
 from ..models.users import User
 from http import HTTPStatus
 from ..models.data import Region, State, Lga, City, Area, load_dataset
-from .serializers import serialized_state
-from .serializers import serialized_region
+from .serializers import serialized_state, serialized_lga, serialized_region
 
 
 search_ns = Namespace('query', description='Search operations')
@@ -23,6 +22,20 @@ state_model = search_ns.model(
         'postal_code': fields.String(required=True, description="Postal Code"),
         # 'No_of_LGAs': fields.String(required=True, description="No of LGAs"),
         'lgas': fields.String(required=True, description="Local Government Areas"),
+    }
+)
+
+
+lga_model = search_ns.model(
+    'lga', {
+        'id': fields.String(required=True),
+        'name': fields.String(required=True, description="LGA Name"),
+        'state_id': fields.String(required=True, description="state"),
+        'state': fields.String(required=True, description="Region ID"),
+        'senatorial_district': fields.String(required=True, description="Capital"),
+        'area': fields.String(required=True, description="Area"),
+        'population': fields.String(required=True, description="Population"),
+        'headquarters': fields.String(required=True, description="Area"),
     }
 )
 
@@ -55,6 +68,7 @@ class QueryStates(Resource):
                     State.name.ilike(f'%{keyword}%'),
                     State.capital.ilike(f'%{keyword}%'),
                     # State.lgas.ilike(f'%{keyword}%'),
+                    Lga.name.ilike(f'%{keyword}%'),
                     Region.name.ilike(f'%{keyword}%')  # Include region name in the search
                 )
             ).all()
@@ -65,6 +79,26 @@ class QueryStates(Resource):
             return {'results': data}, 200
 
 
+@search_ns.route('/lga')
+class QueryLga(Resource):
+    @search_ns.doc('search_lga')
+    @search_ns.marshal_with(lga_model)
+
+    def post(self):
+
+        keyword = request.args.get('keyword')
+        if keyword:
+            # Perform the search query based on the keyword
+            results = Lga.query.filter(
+                db.or_(
+                    Lga.name.ilike(f'%{keyword}%'),
+                )
+            ).all()
+
+            # Serialize the search results
+            data = [serialized_lga(lga) for lga in results]
+
+            return {'results': data}, 200
 
 
 

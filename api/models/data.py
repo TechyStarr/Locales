@@ -75,7 +75,7 @@ class Lga(db.Model):
     __tablename__ = 'lgas'
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(45), nullable=False, unique=True)
-    region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'), nullable=False)
+    region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'))
     state_id = db.Column(db.Integer(), db.ForeignKey('states.id'), nullable=False)
     area = db.Column(db.String(100))
     senatorial_district = db.Column(db.String(45))

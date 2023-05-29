@@ -2864,6 +2864,60 @@
                 "Numan",
                 "Song"
             ]
+        },
+
+        {
+            "id": 8,
+            "state_id": 2,
+            "lga": "Jada",
+            "state":"Adamawa",
+            "senatorial_district": "Adamawa South",
+            "area": "140",
+            "population": "230,596",
+            "headquarters": "Jada",
+            "borders": [
+                "Ganye",
+                "Guyuk",
+                "Lamurde",
+                "Numan",
+                "Song"
+            ]
+        },
+
+        {
+            "id": 9,
+            "state_id": 2,
+            "lga": "Lamurde",
+            "state":"Adamawa",
+            "senatorial_district": "Adamawa South",
+            "area": "140",
+            "population": "230,596",
+            "headquarters": "Lamurde",
+            "borders": [
+                "Ganye",
+                "Guyuk",
+                "Lamurde",
+                "Numan",
+                "Song"
+            ]
+        },
+
+        {
+            "id": 10,
+            "state_id": 2,
+            "lga": "Madagali",
+            "state":"Adamawa",
+            "senatorial_district": "Adamawa North",
+            "area": "140",
+            "population": "230,596",
+            "headquarters": "Madagali",
+            "borders": [
+                "Ganye",
+                "Guyuk",
+                "Lamurde",
+                "Numan",
+                "Song"
+            ]
         }
 
     ]

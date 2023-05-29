@@ -81,7 +81,7 @@ class Lga(db.Model):
     senatorial_district = db.Column(db.String(45))
     population = db.Column(db.String(100))
     headquarters = db.Column(db.String(100))
-    description = db.Column(db.String(100))
+    # description = db.Column(db.String(100))
     created_date = db.Column(db.DateTime(), default=db.func.current_timestamp())
     created_by = db.Column(db.String(100))
     landmass = db.Column(db.String(100))
@@ -179,11 +179,11 @@ def load_dataset():
             area=lga_data['area'],
             population=lga_data['population'],
             headquarters=lga_data['headquarters'],
-            description=lga_data['description'],
-            created_date=lga_data['created_date'],
-            created_by=lga_data['created_by'],
-            landmass=lga_data['landmass'],
-            borders=lga_data['borders'],
+            # description=lga_data['description'],
+            # created_date=lga_data['created_date'],
+            # created_by=lga_data['created_by'],
+            # landmass=lga_data['landmass'],
+            # borders=lga_data['borders'],
         )
         db.session.add(lga)
 

@@ -24,6 +24,9 @@ def create_app(config=config_dict['dev']):
 
     app = Flask(__name__)
     limiter = Limiter(app, key_func=get_remote_address)
+
+#     @api.route('/your-route')
+# @limiter.limit("100/minute")  # Rate li
     
 
     app.config.from_object(config)

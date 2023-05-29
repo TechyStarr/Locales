@@ -6,6 +6,7 @@ from ..models.users import User
 from http import HTTPStatus
 from ..models.data import Region, State, Lga, City, Area, load_dataset
 from .serializers import serialized_state, serialized_lga, serialized_region
+# from .. import cache
 
 
 search_ns = Namespace('query', description='Search operations')

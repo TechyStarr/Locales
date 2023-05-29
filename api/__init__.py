@@ -8,6 +8,9 @@ from .utils.utils import db
 from .models.users import User
 from .models.data import Region, State, Lga, Area
 from flask_migrate import Migrate
+from flask_caching import Cache
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 from flask_jwt_extended import JWTManager
 
 
@@ -15,8 +18,17 @@ from flask_jwt_extended import JWTManager
 
 def create_app(config=config_dict['dev']):
     app = Flask(__name__)
+    cache = Cache(app)
+
+
+
+    app = Flask(__name__)
+    limiter = Limiter(app, key_func=get_remote_address)
+    
 
     app.config.from_object(config)
+    app.config['CACHE_TYPE'] = 'simple'
+
 
     db.init_app(app)
 

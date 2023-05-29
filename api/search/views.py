@@ -1,6 +1,6 @@
 import json
 from flask import Flask, request
-from flask_restx import Api, Resource, fields, Namespace
+from flask_restx import Api, Resource, fields, Namespace, abort
 from ..utils.utils import db
 from ..models.users import User
 from http import HTTPStatus
@@ -42,8 +42,11 @@ region_model= search_namespace.model(
 @search_namespace.route('/load-dataset')
 class LoadDatasetResource(Resource):
     def get(self):
+        if Region.query.first() or State.query.first() or Lga.query.first():
+            abort (400, 'Dataset already loaded')
         load_dataset()
         return {'message': 'Dataset loaded successfully'}
+        
 
 
 @search_namespace.route('/read-dataset')

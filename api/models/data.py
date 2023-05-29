@@ -8,7 +8,7 @@ from flask import Flask
 class Region(db.Model):
     __tablename__ = 'regions'
     id = db.Column(db.Integer(), primary_key=True)
-    name = db.Column(db.String(45), nullable=False, unique=True)
+    name = db.Column(db.String(45), nullable=False)
     state = db.relationship('State', backref='regions', lazy=True)
 
 
@@ -34,7 +34,7 @@ class Region(db.Model):
 class State(db.Model):
     __tablename__ = 'states'
     id = db.Column(db.Integer(), primary_key=True)
-    name = db.Column(db.String(45), nullable=False, unique=True)
+    name = db.Column(db.String(45), nullable=False)
     region = db.Column(db.String(45), nullable=False)
     region_id = db.Column(db.Integer(), db.ForeignKey('regions.id'), nullable=False)
     capital = db.Column(db.String(45))
@@ -42,7 +42,7 @@ class State(db.Model):
     area = db.Column(db.String(100))
     postal_code = db.Column(db.String(100))
     No_of_LGAs = db.Column(db.String(100))
-    lgas = db.relationship('Lga', backref='state', lazy=True)
+    lgas = db.relationship('Lga', backref='state', lazy=True) # One to many relationship with Lga lazy=True means that the data is loaded on access
 
     
 
@@ -143,37 +143,39 @@ def load_dataset():
 
     for state_data in dataset['States']:
         state = State(
-            name=state_data['name'],
+            name=state_data['state'],
             region=state_data['region'],
             region_id=state_data['region_id'],
             capital=state_data['capital'],
             population=state_data['population'],
-            area=state_data['area'],
-            postal_code=state_data['postal_code'],
+            # area=state_data['area'],
+            # postal_code=state_data['postal_code'],
             # No_of_LGAs=state_data['No_of_LGAs'],
-            # lgas=state_data['lgas']
             )
         
-
+    # for lga_name in dataset['Lgas']:
+    #     lga = Lga(name=lga_name, state=state)
 
         db.session.add(state)
 
-    for lga_data in dataset['Lgas']:
-        lga = Lga(
-            name=lga_data['name'],
-            code = lga_data['code'],
-            headquarters = lga_data['headquarters'],
-            zone = lga_data['zone'],
-            senatorial_district = lga_data['senatorial_district'],
-            area = lga_data['area'],
-            population = lga_data['population'],
-            description = lga_data['description'],
-            image = lga_data['image'],
-            state_id=lga_data['state_id'],
-            region_id=lga_data['region_id']
-            
-            )
-        db.session.add(lga)
+    
+    # for lga_data_list in dataset['Lgas']:
+    #     for lga_data in lga_data_list:
+    #         lga = Lga(
+    #             name=lga_data['name'],
+                # code=lga_data['code'],
+                # headquarters=lga_data['headquarters'],
+                # zone=lga_data['zone'],
+                # senatorial_district=lga_data['senatorial_district'],
+                # area=lga_data['area'],
+                # population=lga_data['population'],
+                # description=lga_data['description'],
+                # image=lga_data['image'],
+                # state_id=lga_data['state_id'],
+                # region_id=lga_data['region_id']
+            # )
+            # db.session.add(lga)
+
 
         # Load other data models based on your dataset structure and relationships
 

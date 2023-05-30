@@ -1,36 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/main.css') }}">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-	
-	<title>Blog</title>
+	<title>Website Title</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-	<nav class="navbar">
-	<h1 class="logo">blog</h1>
-	<ul class="nav-link">
-<!-- 
-	{% if current_user.is_authenticated %} -->
-	<li class="active"><a href="{{url_for('aven.index')}}">Home</a></li>
-	<li><a href="{{url_for('aven.publish')}}">Publish</a></li>
-	<li><a href="{{url_for('aven.about')}}">About</a></li>
-	<li><a href="{{url_for('Users.contact')}}">Contact</a></li>
-	<li><a id="logout" href="{{url_for('Users.logout')}}">Logout</a><li>
-	</ul>
-
-
+	<!-- Navigation Bar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+		<!-- Logo -->
+		<a class="navbar-brand" href="#">Logo</a>
+		
+		<!-- Navbar items -->
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Contact</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Developer</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Login</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Sign Up</a>
+				</li>
+			</ul>
+		</div>
 	</nav>
-		<header>
-			<div class="header-content"></div>
-		</header>
+	
+	<!-- Search Section -->
+	<section class="container my-5">
+		<div class="row justify-content-center">
+		<div class="col-md-6">
+			<h2>Search</h2>
+			<form>
+			<div class="input-group mb-3">
+				<input type="text" class="form-control" placeholder="Enter your search query" aria-label="Search Query" aria-describedby="search-button">
+				<button class="btn btn-primary" type="submit" id="search-button">Search</button>
+			</div>
+			</form>
+		</div>
+		</div>
+	</section>
+
+	<!-- Options Section -->
+	<section class="container my-5">
+		<div class="row">
+			<div class="col-md-4">
+				<h3>Region</h3>
+				<select class="form-select" aria-label="Select Region">
+				<option selected disabled>Select Region</option>
+				<!-- Add region options here -->
+				</select>
+			</div>
+			<div class="col-md-4">
+				<h3>State</h3>
+				<select class="form-select" aria-label="Select State">
+				<option selected disabled>Select State</option>
+				<!-- Add state options here -->
+				</select>
+			</div>
+			<div class="col-md-4">
+					<h3>LGA</h3>
+				<select class="form-select" aria-label="Select LGA">
+				<option selected disabled>Select LGA</option>
+			<!-- Add LGA options here -->
+			</select>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 

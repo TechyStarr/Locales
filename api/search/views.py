@@ -6,6 +6,16 @@ from ..models.users import User
 from http import HTTPStatus
 from ..models.data import Region, State, Lga, City, Area, load_dataset
 # from .. import cache
+from flask_caching import Cache
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+
+app = Flask(__name__)
+
+
+cache = Cache(app)
+
+# limiter = Limiter(app, key_func=get_remote_address)
 
 
 
@@ -60,6 +70,7 @@ class readData(Resource):
 # Regions
 @search_namespace.route('/regions')
 # @cache.cached(timeout=60)  # Cache the response for 60 seconds
+# @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
 
 class Retrieve(Resource):
     @search_namespace.marshal_with(region_model, as_list=True)

@@ -83,11 +83,12 @@ class readData(Resource):
         return {'message': 'Dataset loaded successfully'}
 
 
+
+
 # Regions
 @search_namespace.route('/regions')
 # @cache.cached(timeout=60)  # Cache the response for 60 seconds
 # @limiter.limit("100/minute")  # Rate limit of 100 requests per minute (adjust as needed)
-
 class Retrieve(Resource):
     @search_namespace.marshal_with(region_model, as_list=True)
     @search_namespace.doc(
@@ -100,7 +101,6 @@ class Retrieve(Resource):
 
         return regions, HTTPStatus.OK
     
-
 
 @search_namespace.route('/create')
 class Create(Resource):
@@ -169,23 +169,49 @@ class SearchResource(Resource):
         return states, HTTPStatus.OK
     
 
-
-
-
-
-
-
-
-
-
-@search_namespace.route('/regions')
-class Regions(Resource):
+# LGA
+@search_namespace.route('/lgas')
+class RetrieveResource(Resource):
+    @search_namespace.marshal_with(lga_model, as_list=True)
+    @search_namespace.doc(
+        description='Get all lgas',
+    )
     def get(self):
-        query = request.args.get('q')
-        regions = Region.query.filter(Region.name.ilike(f'%{query}%')).all()
-        results = [{'id': region.id, 'name': region.name} for region in regions]
-        return {'results': results}
-        # return regions, HTTPStatus.OK
+        lga = Lga.query.all()
+
+        return lga, HTTPStatus.OK
     
+
+@search_namespace.route('/lgas/<string:lga_id>')
+class Retrieve(Resource):
+    @search_namespace.marshal_with(lga_model)
+    def get(self, lga_id):
+        lga = Lga.query.filter_by(id=lga_id).first()
+        if lga is None:
+            return {"message": "LGA not found"}, HTTPStatus.NOT_FOUND
+        
+        return lga, HTTPStatus.FOUND
+    
+
+
+    def patch(self, lga_id):
+        data = search_namespace.payload
+        lga = Lga.query.filter_by(id=lga_id).first()
+        if not lga:
+            return {'message': 'LGA not found'}, HTTPStatus.NOT_FOUND
+        
+        lga.name = data['name']
+        lga.state_id = data['state_id']
+        lga.senatorial_district = data['senatorial_district']
+        lga.area = data['area']
+        lga.population = data['population']
+        lga.headquarters = data['headquarters']
+        return lga, HTTPStatus.OK
+
+
+
+
+
+
 
 

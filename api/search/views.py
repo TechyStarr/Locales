@@ -21,6 +21,22 @@ cache = Cache(app)
 
 search_namespace = Namespace('search', description = 'Search related operations')
 
+lga_model = search_namespace.model(
+    'lga', {
+        'id': fields.String(required=True),
+        'name': fields.String(required=True, description="LGA Name"),
+        'state_id': fields.String(required=True, description="state"),
+        'state': fields.String(required=True, description="Region ID"),
+        'senatorial_district': fields.String(required=True, description="Capital"),
+        'area': fields.String(required=True, description="Area"),
+        'population': fields.String(required=True, description="Population"),
+        'headquarters': fields.String(required=True, description="Area"),
+    }
+)
+
+
+
+
 state_model = search_namespace.model(
     'State', {
         'id': fields.String(required=True),
@@ -32,7 +48,7 @@ state_model = search_namespace.model(
         'area': fields.String(required=True, description="Area"),
         'postal_code': fields.String(required=True, description="Postal Code"),
         # 'No_of_LGAs': fields.String(required=True, description="No of LGAs"),
-        'lgas': fields.String(required=True, description="Local Government Areas"),
+        'lgas': fields.Nested((lga_model), description="Local Government Areas"),
     }
 )
 
@@ -107,13 +123,13 @@ class Create(Resource):
     
 
 
-@search_namespace.route('/regions/<string:region_id>')
+@search_namespace.route('/update-region/<string:region_id>')
 class Update(Resource): 
     @search_namespace.marshal_with(region_model)
     @search_namespace.doc(
         description='Get a Region by ID',
     )
-    def get(self, region_id):
+    def patch(self, region_id):
         region = Region.query.filter_by(id=region_id).first()
         if not region:
             return {'message': 'Region not found'}, HTTPStatus.NOT_FOUND
@@ -134,13 +150,16 @@ class Retrieve(Resource):
             return {'message': 'No State found'}, HTTPStatus.NOT_FOUND
 
         return states, HTTPStatus.OK
+    
+
+
 
 
 
 # States
 @search_namespace.route('/states')
 class SearchResource(Resource):
-    @search_namespace.marshal_with(region_model, as_list=True)
+    @search_namespace.marshal_with(state_model, as_list=True)
     @search_namespace.doc(
         description='Get all States',
     )

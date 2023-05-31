@@ -1,6 +1,7 @@
 from flask import Flask, request, session, Blueprint, render_template, redirect, url_for, flash
 from http import HTTPStatus
-from ...api.models.users import User
+from api.models.users import User
+from api.utils.utils import db
 from flask_caching import Cache
 from flask_login import login_user, logout_user, current_user, login_required
 from flask import Blueprint, render_template, redirect, url_for, flash

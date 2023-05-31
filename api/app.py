@@ -1,6 +1,6 @@
 from flask import Flask, render_template
-from views.auth import auth
-from views.views import views
+from auth.web_views import auth
+from .search.web_views import views
 
 app = Flask(__name__)
 

@@ -1,9 +1,6 @@
-from flask import Flask, request
-from flask_restx import Api, Resource, fields, Namespace, abort
-from ...api.utils.utils import db
+from flask import Flask, request, session, Blueprint, render_template, redirect, url_for, flash
 from http import HTTPStatus
 from ...api.models.users import User
-from ...api.models.data import Region, State, Lga, City, Area, load_dataset
 from flask_caching import Cache
 from flask_login import login_user, logout_user, current_user, login_required
 from flask import Blueprint, render_template, redirect, url_for, flash
@@ -11,7 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 
 
-auth = Namespace('User', description = 'Search related operations')
+auth = Blueprint('User', __name__, url_prefix='/auth')
 
 
 # signup route
@@ -48,24 +45,24 @@ def register():
 
 
 
-@auth.route("/login", methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        email = request.form.get("email")
-        password = request.form.get("password")
+# @auth.route("/login", methods=['GET', 'POST'])
+# def login():
+#     if request.method == 'POST':
+#         email = request.form.get("email")
+#         password = request.form.get("password")
 
-        user = User.query.filter_by(email=email).first()
-        if user:
-            if check_password_hash(user.password_hash, password):
-                flash(f"Good to have you back, {user.username}", category='success')
-                login_user(user, remember=True)
-                return redirect(url_for('aven.index'))
-            else:
-                flash("Incorrect password!", category='error')
-        else:
-            flash('Email does not exist.', category='error')
+#         user = User.query.filter_by(email=email).first()
+#         if user:
+#             if check_password_hash(user.password_hash, password):
+#                 flash(f"Good to have you back, {user.username}", category='success')
+#                 login_user(user, remember=True)
+#                 return redirect(url_for('aven.index'))
+#             else:
+#                 flash("Incorrect password!", category='error')
+#         else:
+#             flash('Email does not exist.', category='error')
 
-    return render_template("login.html")
+#     return render_template("login.html")
 
 
 

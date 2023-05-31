@@ -51,9 +51,11 @@ def create_app(config=config_dict['dev']):
         # security = "Bearer Auth"
     )
 
-    api.add_namespace(auth_namespace, path='/auth')
-    api.add_namespace(search_namespace, path='/search')
-    api.add_namespace(search_ns, path='/query')
+    api.add_namespace(auth_namespace, path='/api/auth')
+    api.add_namespace(search_namespace, path='/api/search')
+    api.add_namespace(search_ns, path='/api/query')
+
+    
 
 
 

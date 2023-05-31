@@ -55,8 +55,6 @@ def create_app(config=config_dict['dev']):
     api.add_namespace(search_namespace, path='/search')
     api.add_namespace(search_ns, path='/query')
 
-    
-
 
 
     @app.shell_context_processor 

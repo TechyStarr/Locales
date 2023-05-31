@@ -8,9 +8,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 
 
-auth = Blueprint('User', __name__, url_prefix='/auth')
+views = Blueprint('views', __name__)
 
 
-@auth.route('/signup', methods = ['GET', 'POST'])
+@views.route('/signup', methods = ['GET', 'POST'])
 def index():
     return render_template('index.html')

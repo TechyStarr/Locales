@@ -9,7 +9,7 @@ from flask_jwt_extended.exceptions import NoAuthorizationError
 
 
 
-auth_namespace = Namespace('auth', path='api/users', description='Authentication Endpoints')
+auth_namespace = Namespace('auth', description='Authentication Endpoints')
 
 
 

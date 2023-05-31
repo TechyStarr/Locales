@@ -1,15 +1,14 @@
 from flask import Flask, render_template
-from backend.views import auth
+from backend.views import views
+# from backend.users import user
 
 app = Flask(__name__)
 
 # Register the API blueprint
-app.register_blueprint(auth, url_prefix='/api')
+# app.register_blueprint(user, url_prefix='/user')
+app.register_blueprint(views, url_prefix='/views')
 
-# Define your website routes
-@app.route('/')
-def index():
-    return render_template('index.html')
+
 
 if __name__ == '__main__':
     app.run()

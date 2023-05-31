@@ -2,9 +2,9 @@ import json
 from flask import Flask, request
 from flask_restx import Api, Resource, fields, Namespace, abort
 from ..utils.utils import db
-from ..models.users import User
+from models.users import User
 from http import HTTPStatus
-from ..models.data import Region, State, Lga, City, Area, load_dataset
+from models.data import Region, State, Lga, City, Area, load_dataset
 # from .. import cache
 from flask_caching import Cache
 from flask_limiter import Limiter

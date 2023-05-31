@@ -1,7 +1,7 @@
 # contain all the routes
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import current_user, login_required, current_user
-from api.utils.utils import db
+from api.models.data import Region, State, Lga
 
 views = Blueprint("views", __name__)
 

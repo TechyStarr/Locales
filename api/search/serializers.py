@@ -1,4 +1,4 @@
-from ..models.data import State, Region, Lga
+from models.data import State, Region, Lga
 
 def serialized_region(region):
     return {

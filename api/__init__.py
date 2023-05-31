@@ -5,8 +5,8 @@ from .search.views import search_namespace
 from .search.search import search_ns
 from .config.config import config_dict
 from .utils.utils import db
-from .models.users import User
-from .models.data import Region, State, Lga, Area
+from models.users import User
+from models.data import Region, State, Lga, Area
 from flask_migrate import Migrate
 from flask_caching import Cache
 from flask_limiter import Limiter

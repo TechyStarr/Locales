@@ -68,6 +68,58 @@ def login():
     return render_template("login.html")
 
 
+
+# @app.route('/login', methods=['GET', 'POST'])
+# def login():
+#     if 'authenticated' in session:
+#         # User is already authenticated, redirect to dashboard or home page
+#         return redirect('/dashboard')
+
+#     if request.method == 'POST':
+#         # Process login form data and authenticate the user
+#         username = request.form['username']
+#         password = request.form['password']
+#         # Perform user authentication logic here
+
+#         # Set session variable to indicate user is authenticated
+#         session['authenticated'] = True
+
+#         # Redirect to a different page after successful login
+#         return redirect('/dashboard')
+
+#     # Render the login or register template based on authentication status
+#     if 'registered' in session:
+#         # User is already registered, render the login template
+#         return render_template('login.html')
+#     else:
+#         # User is not registered, render the register template
+#         return render_template('register.html')
+
+
+
+
+
+from flask import render_template
+from .forms import LoginForm
+
+@auth.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+
+    if form.validate_on_submit():
+        # Process form data and perform authentication
+        username = form.username.data
+        password = form.password.data
+        # Perform user authentication logic here
+
+        # Redirect to a different page after successful login
+        return redirect('/dashboard')
+
+    return render_template('login.html', form=form)
+
+
+
+
 @auth.route("/contact", methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':

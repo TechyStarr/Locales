@@ -1,17 +1,17 @@
 # contain all the routes
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import current_user, login_required, current_user
-
 from models.users import User
-
 from models.data import Region, State, Lga
+
+
 
 views = Blueprint("views", __name__)
 
 
 @views.route("/")
 def index():
-    articles = Region.query.all()
+    regions = Region.query.all()
     return render_template("index.html", user=current_user, articles=articles)
 
 

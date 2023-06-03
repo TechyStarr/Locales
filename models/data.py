@@ -1,5 +1,5 @@
 import json
-from api.utils.utils import db
+from .users import db
 from flask import Flask
 
 

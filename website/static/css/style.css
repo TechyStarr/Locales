@@ -1,0 +1,133 @@
+/* 
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+        background-color: #f8f9fa;
+        padding: 10px;
+    }
+
+    .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+
+    .container {
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        border-radius: 0;
+    }
+
+    .btn-primary {
+        border-radius: 0;
+    }
+
+    .col-md-4 {
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+ */
+
+
+
+
+ /* Set global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+  /* Style the navbar */
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+  /* Style the header section */
+header {
+    background-color: #007bff;
+    padding: 60px 0;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+header .btn {
+    background-color: #fff;
+    color: #007bff;
+    font-size: 1.2rem;
+    padding: 10px 30px;
+}
+
+/* Style the feature sections */
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.1rem;
+}
+
+/* Style the footer */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+}
+
+/* Center the footer text */
+footer p {
+    text-align: center;
+}
+
+.land {
+    background-color: #c5c5c5;
+    color: #fff;
+    padding: 60px 0;
+}

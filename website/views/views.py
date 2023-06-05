@@ -11,9 +11,32 @@ views = Blueprint("views", __name__)
 
 @views.route("/")
 def index():
-    regions = Region.query.all()
-    return render_template("index.html", user=current_user, articles=articles)
+    return render_template("index.html")
 
+def get_states(region_id):
+    states = State.query.filter_by(region_id=region_id).all()
+    return states
+
+def get_lgas(state_id):
+    lgas = Lga.query.filter_by(state_id=state_id).all()
+    return lgas
+
+@views.route("/states/<int:region_id>")
+def states(region_id):
+    states = get_states(region_id)
+    context = {
+        'states': states
+    }
+    return render_template("states.html", user=current_user, context=context)
+
+@views.route("/lgas/<int:state_id>")
+def search(self):
+    q = request.args.get('q')
+    if q:
+        lgas = Lga.query.filter(Lga.name.contains(q)).all()
+    else:
+        lgas = Lga.query.all()
+    return render_template("index.html", lgas=lgas)
 
 
 
@@ -30,19 +53,6 @@ def contact():
         flash('We appreciate the feedback, be on the lookout for our response',
                 category='success')
     return render_template("contact.html", current_user=current_user)
-
-
-# @views.route("/article/<email>")
-# @login_required
-# def aricles(email):
-#     user = User.query.filter_by(email=email).first()
-
-#     if not user:
-#         flash('No user with that email exists.', category='error')
-#         return redirect(url_for('index'))
-
-#     aricles = user.aricles
-#     return render_template("aricles.html", user=current_user, aricles=aricles, email=email)
 
 
 

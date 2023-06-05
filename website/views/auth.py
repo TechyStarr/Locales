@@ -40,7 +40,7 @@ def register():
 			flash('Your account has been created!')
 			login_user(new_user, remember=True)
 
-			return redirect(url_for('aven.index'))
+			return redirect(url_for('views.index'))
 
 	return render_template('register.html')
 
